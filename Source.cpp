@@ -7,9 +7,6 @@
 
 using namespace std;
 
-const string infilePath = "input.txt";
-const string outfilePath = "output.txt";
-
 vector<float> readCoefs(string infile_path) {
 	ifstream fin(infile_path);
     vector<float> coefs(3);
@@ -62,8 +59,12 @@ void writeAnswers(vector<float> answers, string outfile_path) {
 }
 
 int main() {
+    string infilePath = "input.txt";
+    string outfilePath = "output.txt";
+	
     vector<float> coefs;
     vector<float> answers;
+	
     coefs = readCoefs(infilePath);
     answers = quaEquationSolver(coefs);
     writeAnswers(answers, outfilePath);
