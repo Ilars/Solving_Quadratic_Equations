@@ -16,11 +16,11 @@ vector<float> readCoefs(string infile_path) {
     return coefs;
 }
 
-float findDiscriminant(vector<float> coefs) {
+float findDiscriminant(const vector<float> &coefs) {
     return (coefs[1]*coefs[1]) - 4 * coefs[0] * coefs[1];
 }
 
-vector<float> quaEquationSolver(vector<float> coefs) {
+vector<float> quaEquationSolver(const vector<float> &coefs) {
     vector<float> answers(3);
     float discriminant = findDiscriminant(coefs);
     if (coefs[0] == 0) {
@@ -41,7 +41,7 @@ vector<float> quaEquationSolver(vector<float> coefs) {
     return answers;
 }
 
-void writeAnswers(vector<float> answers, string outfile_path) {
+void writeAnswers(const vector<float> &answers, string outfile_path) {
     ofstream fout(outfile_path);
     if (answers[2] == 0) {
         fout << "No answer on the real field of numbers";
