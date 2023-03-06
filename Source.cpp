@@ -17,7 +17,7 @@ vector<float> readCoefs(string infile_path) {
 }
 
 float findDiscriminant(const vector<float> &coefs) {
-    return (coefs[1]*coefs[1]) - 4 * coefs[0] * coefs[1];
+    return (coefs[1]*coefs[1]) - 4 * coefs[0] * coefs[2];
 }
 
 vector<float> quaEquationSolver(const vector<float> &coefs) {
